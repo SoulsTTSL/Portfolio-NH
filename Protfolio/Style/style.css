@@ -1,0 +1,94 @@
+/* RESET GLOBAL */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* VIDEO DE FOND */
+#bg-video {
+    position: fixed; /* Reste fixe même en scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit le conteneur sans déformer */
+    z-index: -1; /* Derrière tout le contenu */
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparence pour voir la vidéo */
+    z-index: 1000; /* Toujours devant le contenu */
+}
+
+/* LOGO */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .logo .Nom {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* TITRE DE PAGE */
+header .page_title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* MENU DE NAVIGATION */
+header .menu {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 100%;
+    padding-right: 10px;
+    overflow-x: auto;    /* Permet le scroll horizontal si le menu dépasse */
+    white-space: nowrap; /* Empêche les liens de passer à la ligne */
+    flex-shrink: 1;      /* Permet au menu de réduire sa taille si nécessaire */
+}
+
+/* Cache la scrollbar sur Chrome/Safari */
+header .menu::-webkit-scrollbar {
+    display: none;
+}
+
+header .menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    flex-shrink: 0; /* Chaque lien garde sa taille */
+}
+
+header .menu a:hover {
+    color: #f0a500;
+}
+
+/* CONTENU PRINCIPAL */
+.content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Centre verticalement */
+    text-align: center;
+    color: white;
+    z-index: 1; /* Au-dessus de la vidéo */
+}
